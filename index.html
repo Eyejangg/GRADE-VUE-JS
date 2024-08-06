@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>โปรแกรมตัดเกรด</h1>
+            <form @submit.prevent="calculateGrade">
+                <div class="input-group">
+                    <label for="score">โปรดใส่คะแนน:</label>
+                    <input type="number" v-model.number="score" id="score" required>
+                </div>
+                <button type="submit">คำนวณ</button>
+            </form>
+            <div v-if="grade">
+                <h2>เกรดของคุณ {{ grade }}</h2>
+                <p>{{ gradeDescription }}</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="javascript.js"></script>
+</body>
+</html>
